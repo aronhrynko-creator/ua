@@ -70,6 +70,7 @@
   }).catch(function () {});
 
   // ---------- онлайн-запис ----------
+  if (!C.book) return;  // форма запису — лише коли налаштовано сповіщення в Telegram
   var anchor = el('reviews') || el('contacts'); if (!anchor) return;
   var opts = (window.SVD || []).map(function (s) { return '<option>' + esc(s.t) + '</option>'; }).join('');
   var today = new Date().toISOString().slice(0, 10);
